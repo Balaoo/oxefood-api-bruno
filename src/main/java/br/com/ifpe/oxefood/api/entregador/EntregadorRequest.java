@@ -14,13 +14,13 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class EntregadorRequest {
 
    private String nome;
-
    @JsonFormat(pattern = "dd/MM/yyyy")
    private LocalDate dataNascimento;
-
+   
    private String cpf;
 
    private String rg;
@@ -29,7 +29,7 @@ public class EntregadorRequest {
 
    private String foneFixo;
 
-   private Integer entregasRealizadas;
+   private Integer qtdEntregasRealizadas;
 
    private Double valorFrete;
 
@@ -49,25 +49,26 @@ public class EntregadorRequest {
 
    private boolean ativo;
 
+
    public Entregador build() {
 
-      return Entregador.builder()
-            .nome(nome)
-            .cpf(cpf)
-            .rg(rg)
-            .dataNascimento(dataNascimento)
-            .foneCelular(foneCelular)
-            .foneFixo(foneFixo)
-            .entregasRealizadas(entregasRealizadas)
-            .valorFrete(valorFrete)
-            .enderecoRua(enderecoRua)
-            .enderecoNumero(enderecoNumero)
-            .enderecoBairro(enderecoBairro)
-            .enderecoCidade(enderecoCidade)
-            .enderecoCep(enderecoCep)
-            .enderecoUf(enderecoUf)
-            .enderecoComplemento(enderecoComplemento)
-            .ativo(ativo)
-            .build();
+       return Entregador.builder()
+               .nome(nome)
+               .dataNascimento(dataNascimento)
+               .cpf(cpf)
+               .rg(rg)
+               .foneCelular(foneCelular)
+               .foneFixo(foneFixo)
+               .qtdEntregasRealizadas(qtdEntregasRealizadas)
+               .valorFrete(valorFrete)
+               .enderecoRua(enderecoRua)
+               .enderecoNumero(enderecoNumero)
+               .enderecoBairro(enderecoBairro)
+               .enderecoCidade(enderecoCidade)
+               .enderecoCep(enderecoCep)
+               .enderecoUf(enderecoUf)
+               .enderecoComplemento(enderecoComplemento)
+               .ativo(ativo)
+               .build();
    }
 }
