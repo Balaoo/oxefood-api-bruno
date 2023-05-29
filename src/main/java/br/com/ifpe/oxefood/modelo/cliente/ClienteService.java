@@ -44,5 +44,14 @@ public void update(Long id, Cliente clienteAlterado) {
    super.preencherCamposAuditoria(cliente);
    repository.save(cliente);
 }
+@Transactional
+public void delete(Long id) {
+
+    Cliente cliente = repository.findById(id).get();
+    cliente.setHabilitado(Boolean.FALSE);
+    super.preencherCamposAuditoria(cliente);
+
+    repository.save(cliente);
+}
 
 }

@@ -47,4 +47,14 @@ public void update(Long id, Comprador compradorAlterado) {
    super.preencherCamposAuditoria(comprador);
    repository.save(comprador);
 }
+@Transactional
+public void delete(Long id) {
+
+    Comprador comprador = repository.findById(id).get();
+    comprador.setHabilitado(Boolean.FALSE);
+    super.preencherCamposAuditoria(comprador);
+
+    repository.save(comprador);
+}
+
 }
