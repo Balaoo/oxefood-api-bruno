@@ -13,4 +13,6 @@ public abstract class GenericController {
             throw new PreenchimentoException(PreenchimentoException.MSG_CHAVE_NAO_INFORMADA);
         }
     }
+    
 }
+
